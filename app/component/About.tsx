@@ -8,12 +8,64 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
+const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: -60,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+
+const fadeRight = {
+  hidden: {
+    opacity: 0,
+    x: 60,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-black md:py-36 py-28 text-white"
+      className="relative overflow-hidden bg-black text-white"
     >
       {/* Background Glow */}
       <div className="absolute left-0 top-32 h-80 w-80 rounded-full bg-orange-500/10 blur-[140px]" />
@@ -23,33 +75,59 @@ export default function About() {
       {/* Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-0">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-0 mt-28">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className="grid items-center gap-20 lg:grid-cols-2"
+        >
           {/* LEFT */}
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-xl">
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div
+              variants={fadeUp}
+              className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-xl"
+            >
               <User size={16} />
               About Me
-            </div>
+            </motion.div>
 
-            <h2 className="mt-8 text-2xl font-bold leading-tight md:text-4xl">
+            <motion.h2
+              variants={fadeUp}
+              className="mt-8 text-2xl font-bold leading-tight md:text-4xl"
+            >
               Passionate About Building
               <span className="text-orange-500"> Beautiful </span>
               Digital Experiences.
-            </h2>
+            </motion.h2>
 
-            <p className="mt-8 md:text-lg text-base leading-8 text-zinc-400">
-              I'm Ali, a Frontend Developer specializing in React,
-              Next.js and Tailwind CSS. I enjoy turning ideas into
-              modern, responsive and high performance website and web applications
-              with clean code and beautiful interfaces.
-            </p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-8 md:text-lg text-base leading-8 text-zinc-400"
+            >
+              I'm Ali, a Frontend Developer specializing in React, Next.js and
+              Tailwind CSS. I enjoy turning ideas into modern, responsive and
+              high performance website and web applications with clean code and
+              beautiful interfaces.
+            </motion.p>
 
-            <p className="mt-6 md:text-lg text-base leading-8 text-zinc-400">
-              My goal is to create products that are fast, accessible,
-              user friendly and visually appealing while delivering the
-              best experience for every user.
-            </p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 md:text-lg text-base leading-8 text-zinc-400"
+            >
+              My goal is to create products that are fast, accessible, user
+              friendly and visually appealing while delivering the best
+              experience for every user.
+            </motion.p>
 
             <div className="mt-10 space-y-5">
               {[
@@ -58,97 +136,113 @@ export default function About() {
                 "Beautiful UI/UX Implementation",
                 "Performance Optimization",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2
-                    size={22}
-                    className="text-orange-500"
-                  />
+                <motion.div
+                  variants={fadeUp}
+                  whileHover={{ x: 8 }}
+                  key={item}
+                  className="flex items-center gap-3"
+                >
+                  <CheckCircle2 size={22} className="text-orange-500" />
 
                   <span className="text-zinc-300">{item}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             <a
-              href="#projects"
+              href="/projects"
               className="group mt-10 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
             >
               View Projects
-
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
-          <div className="relative">
+          <motion.div variants={fadeRight} className="relative">
             <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-3xl" />
 
             <div className="relative rounded-3xl border border-orange-500/20 bg-zinc-900/80 p-4 backdrop-blur-xl">
               <div className="grid gap-6">
-                <div className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6">
+                <motion.div
+                  variants={fadeUp}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                  }}
+                  transition={{ duration: 0.25 }}
+                  className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
+                >
                   <div className="rounded-xl bg-orange-500/10 p-4">
                     <Code2 className="text-orange-500" />
                   </div>
 
                   <div>
-                    <h3 className="font-semibold">
-                      Clean Code
-                    </h3>
+                    <h3 className="font-semibold">Clean Code</h3>
 
                     <p className="mt-1 text-sm text-zinc-400">
                       Scalable and maintainable code structure.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6">
+                <motion.div
+                  variants={fadeUp}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                  }}
+                  transition={{ duration: 0.25 }}
+                  className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
+                >
                   <div className="rounded-xl bg-orange-500/10 p-4">
                     <Briefcase className="text-orange-500" />
                   </div>
 
                   <div>
-                    <h3 className="font-semibold">
-                      Real Projects
-                    </h3>
+                    <h3 className="font-semibold">Real Projects</h3>
 
                     <p className="mt-1 text-sm text-zinc-400">
                       Experience building production-ready web apps.
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6">
+                <motion.div
+                  variants={fadeUp}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                  }}
+                  transition={{ duration: 0.25 }}
+                  className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
+                >
                   <div className="rounded-xl bg-orange-500/10 p-4">
                     <Award className="text-orange-500" />
                   </div>
 
                   <div>
-                    <h3 className="font-semibold">
-                      Continuous Learning
-                    </h3>
+                    <h3 className="font-semibold">Continuous Learning</h3>
 
                     <p className="mt-1 text-sm text-zinc-400">
                       Always exploring new technologies and best practices.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
-              <div className="mt-8 grid grid-cols-3 gap-5">
+              <motion.div
+                variants={fadeUp}
+                className="mt-8 grid grid-cols-3 gap-5"
+              >
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold text-orange-500">
-                    10+
-                  </h3>
+                  <h3 className="text-3xl font-bold text-orange-500">10+</h3>
 
-                  <p className="mt-2 text-sm text-zinc-400">
-                    Projects
-                  </p>
+                  <p className="mt-2 text-sm text-zinc-400">Projects</p>
                 </div>
 
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold text-orange-500">
-                    2+
-                  </h3>
+                  <h3 className="text-3xl font-bold text-orange-500">2+</h3>
 
                   <p className="mt-2 text-sm text-zinc-400">
                     Years of Experience
@@ -156,19 +250,15 @@ export default function About() {
                 </div>
 
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold text-orange-500">
-                    100%
-                  </h3>
+                  <h3 className="text-3xl font-bold text-orange-500">100%</h3>
 
-                  <p className="mt-2 text-sm text-zinc-400">
-                    Responsive
-                  </p>
+                  <p className="mt-2 text-sm text-zinc-400">Responsive</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
-};
+}

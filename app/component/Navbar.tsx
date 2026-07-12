@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight, Star } from "lucide-react";
 import { bungeeOutline } from "@/app/font";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -53,17 +54,27 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-12 lg:flex">
-            {links.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="group relative text-[15px] font-medium text-zinc-300 transition-colors duration-300 hover:text-orange-400"
-              >
-                {link}
-
-                <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+            {links.map((link) =>
+              link === "Projects" ? (
+                <Link
+                  key={link}
+                  href="/projects"
+                  className="group relative text-[15px] font-medium text-zinc-300 transition-colors duration-300 hover:text-orange-400"
+                >
+                  {link}
+                  <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
+                </Link>
+              ) : (
+                <a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="group relative text-[15px] font-medium text-zinc-300 transition-colors duration-300 hover:text-orange-400"
+                >
+                  {link}
+                  <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
+                </a>
+              ),
+            )}
           </nav>
 
           {/* CTA */}
@@ -105,16 +116,27 @@ export default function Navbar() {
         >
           <div className="mx-auto max-w-7xl">
             <nav className="flex flex-col gap-5">
-              {links.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  onClick={() => setOpen(false)}
-                  className="text-lg font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
-                >
-                  {link}
-                </a>
-              ))}
+              {links.map((link) =>
+                link === "Projects" ? (
+                  <Link
+                    key={link}
+                    href="/projects"
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
+                  >
+                    {link}
+                  </Link>
+                ) : (
+                  <a
+                    key={link}
+                    href={`#${link.toLowerCase()}`}
+                    onClick={() => setOpen(false)}
+                    className="text-lg font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
+                  >
+                    {link}
+                  </a>
+                ),
+              )}
 
               <a
                 href="https://wa.me/23407086587956"

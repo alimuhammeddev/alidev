@@ -8,6 +8,7 @@ import {
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const socials = [
   {
@@ -37,45 +38,129 @@ const socials = [
   },
 ];
 
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
+const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: -80,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
+const fadeRight = {
+  hidden: {
+    opacity: 0,
+    x: 80,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-black py-24 text-white"
+      className="relative overflow-hidden bg-black text-white"
     >
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[150px]" />
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-0">
+      <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-0 mt-28 mb-20">
         {/* Heading */}
-        <div className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: false,
+            amount: 0.4,
+          }}
+          className="mb-16 text-center"
+        >
+          <motion.div
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400"
+          >
             <Sparkles size={16} />
             Get In Touch
-          </div>
+          </motion.div>
 
-          <h2 className="mt-6 text-4xl font-bold md:text-5xl">
+          <motion.h2
+            variants={fadeUp}
+            className="mt-6 text-4xl font-bold md:text-5xl"
+          >
             Let's Build Something{" "}
             <span className="text-orange-500">Amazing</span>
-          </h2>
+          </motion.h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-zinc-400">
+          <motion.p
+            variants={fadeUp}
+            className="mx-auto mt-5 max-w-2xl text-zinc-400"
+          >
             Have a project in mind or want to collaborate? Feel free to reach
             out. I would love to hear from you.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: false,
+            amount: 0.2,
+          }}
+          className="grid gap-8 lg:grid-cols-2"
+        >
           {/* Contact Info */}
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-3">
-            <h3 className="text-2xl font-semibold">
-              Contact Information
-            </h3>
+          <motion.div
+            variants={fadeLeft}
+            className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-3"
+          >
+            <h3 className="text-2xl font-semibold">Contact Information</h3>
 
             <div className="mt-8 space-y-6">
-              <div className="flex items-center gap-4">
+              <motion.div
+                variants={fadeUp}
+                whileHover={{
+                  x: 8,
+                }}
+                className="flex items-center gap-4"
+              >
                 <div className="rounded-xl bg-orange-500/10 p-3 text-orange-500">
                   <Mail />
                 </div>
@@ -83,9 +168,15 @@ export default function Contact() {
                   <p className="text-sm text-zinc-400">Email</p>
                   <p className="break-all">muhammedaliali2020@gmail.com</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-center gap-4">
+              <motion.div
+                variants={fadeUp}
+                whileHover={{
+                  x: 8,
+                }}
+                className="flex items-center gap-4"
+              >
                 <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
                   <Phone />
                 </div>
@@ -93,9 +184,15 @@ export default function Contact() {
                   <p className="text-sm text-zinc-400">Phone</p>
                   <p>+234 708 658 7956</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-center gap-4">
+              <motion.div
+                variants={fadeUp}
+                whileHover={{
+                  x: 8,
+                }}
+                className="flex items-center gap-4"
+              >
                 <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
                   <MapPin />
                 </div>
@@ -103,21 +200,28 @@ export default function Contact() {
                   <p className="text-sm text-zinc-400">Location</p>
                   <p>Abuja, Nigeria</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Social Icons */}
             <div className="mt-10">
-              <h4 className="mb-4 font-medium">
-                Get In Touch
-              </h4>
+              <h4 className="mb-4 font-medium">Get In Touch</h4>
 
               <div className="flex flex-wrap gap-4">
                 {socials.map((social) => {
                   const Icon = social.icon;
 
                   return (
-                    <a
+                    <motion.a
+                      variants={fadeUp}
+                      whileHover={{
+                        y: -6,
+                        scale: 1.1,
+                        rotate: 5,
+                      }}
+                      whileTap={{
+                        scale: 0.9,
+                      }}
                       key={social.name}
                       href={social.link}
                       target="_blank"
@@ -127,15 +231,15 @@ export default function Contact() {
                         size={16}
                         className="text-zinc-300 transition group-hover:text-orange-500"
                       />
-                    </a>
+                    </motion.a>
                   );
                 })}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <form className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5">
+          <motion.form variants={fadeRight} className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5">
             <div className="grid gap-5">
               <input
                 type="text"
@@ -161,16 +265,14 @@ export default function Contact() {
                 className="rounded-xl border border-zinc-700 bg-black px-4 py-3 outline-none transition focus:border-orange-500"
               />
 
-              <button
-                className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-medium text-white transition hover:bg-orange-400"
-              >
+              <button className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-medium text-white transition hover:bg-orange-400">
                 Send Message
                 <Send size={18} />
               </button>
             </div>
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
       </div>
     </section>
   );
-};
+}
