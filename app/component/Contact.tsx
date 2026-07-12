@@ -48,7 +48,7 @@ export default function Contact() {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
 
-      <div className="relative mx-auto max-w-7xl md:p-0 px-5">
+      <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-0">
         {/* Heading */}
         <div className="mb-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">Email</p>
-                  <p>muhammedaliali2020@gmail.com</p>
+                  <p className="break-all">muhammedaliali2020@gmail.com</p>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ export default function Contact() {
                 Get In Touch
               </h4>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 {socials.map((social) => {
                   const Icon = social.icon;
 
