@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #1f2937; /* Milk color */
+  --foreground: #1f2937;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fira Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #171717;
+  color: #171717;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  animation: floatIn .7s ease;
+}
+
+/* ===========================
+   PROJECT SWIPER
+=========================== */
+
+/* Navigation Buttons */
+.projectSwiper .swiper-button-next,
+.projectSwiper .swiper-button-prev {
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+
+  color: #f97316;
+
+  backdrop-filter: blur(10px);
+
+  transition: all .35s ease;
+}
+
+/* Arrow Size */
+.projectSwiper .swiper-button-next::after,
+.projectSwiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Hover */
+.projectSwiper .swiper-button-next:hover,
+.projectSwiper .swiper-button-prev:hover {
+  background: #f97316;
+  color: white;
+
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(249,115,22,.4);
+}
+
+/* Disabled */
+.projectSwiper .swiper-button-disabled {
+  opacity: .35;
+}
+
+.projectSwiper {
+  cursor: grab;
+}
+
+.projectSwiper:active {
+  cursor: grabbing;
 }
