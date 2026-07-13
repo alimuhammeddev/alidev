@@ -107,7 +107,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="show"
           viewport={{
-            once: false,
+            once: true,
             amount: 0.4,
           }}
           className="mb-16 text-center"
@@ -122,7 +122,7 @@ export default function Contact() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-6 text-4xl font-bold md:text-5xl"
+            className="mt-6 text-2xl font-bold md:text-4xl"
           >
             Let's Build Something{" "}
             <span className="text-orange-500">Amazing</span>
@@ -141,7 +141,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="show"
           viewport={{
-            once: false,
+            once: true,
             amount: 0.2,
           }}
           className="grid gap-8 lg:grid-cols-2"
@@ -149,16 +149,13 @@ export default function Contact() {
           {/* Contact Info */}
           <motion.div
             variants={fadeLeft}
-            className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-3"
+            className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5"
           >
-            <h3 className="text-2xl font-semibold">Contact Information</h3>
+            <h3 className="md:text-2xl text-xl font-semibold">Contact Information</h3>
 
             <div className="mt-8 space-y-6">
               <motion.div
                 variants={fadeUp}
-                whileHover={{
-                  x: 8,
-                }}
                 className="flex items-center gap-4"
               >
                 <div className="rounded-xl bg-orange-500/10 p-3 text-orange-500">
@@ -172,9 +169,6 @@ export default function Contact() {
 
               <motion.div
                 variants={fadeUp}
-                whileHover={{
-                  x: 8,
-                }}
                 className="flex items-center gap-4"
               >
                 <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
@@ -188,9 +182,6 @@ export default function Contact() {
 
               <motion.div
                 variants={fadeUp}
-                whileHover={{
-                  x: 8,
-                }}
                 className="flex items-center gap-4"
               >
                 <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">

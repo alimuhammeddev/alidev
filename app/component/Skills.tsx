@@ -87,7 +87,7 @@ export default function Skills() {
           initial="hidden"
           whileInView="show"
           viewport={{
-            once: false,
+            once: true,
             amount: 0.3,
           }}
           className="mb-16 text-center"
@@ -122,7 +122,7 @@ export default function Skills() {
           initial="hidden"
           whileInView="show"
           viewport={{
-            once: false,
+            once: true,
             amount: 0.15,
           }}
           className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"

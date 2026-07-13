@@ -8,18 +8,18 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
     },
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 40,
@@ -28,35 +28,8 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const fadeLeft = {
-  hidden: {
-    opacity: 0,
-    x: -60,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
-
-const fadeRight = {
-  hidden: {
-    opacity: 0,
-    x: 60,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
+      duration: 0.55,
+      ease: "easeOut",
     },
   },
 };
@@ -80,19 +53,11 @@ export default function About() {
           variants={container}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
           className="grid items-center gap-20 lg:grid-cols-2"
         >
           {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.5,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <motion.div variants={fadeUp}>
             <motion.div
               variants={fadeUp}
               className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-xl"
@@ -138,7 +103,6 @@ export default function About() {
               ].map((item) => (
                 <motion.div
                   variants={fadeUp}
-                  whileHover={{ x: 8 }}
                   key={item}
                   className="flex items-center gap-3"
                 >
@@ -159,18 +123,13 @@ export default function About() {
           </motion.div>
 
           {/* RIGHT */}
-          <motion.div variants={fadeRight} className="relative">
+          <motion.div variants={fadeUp} className="relative">
             <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-3xl" />
 
             <div className="relative rounded-3xl border border-orange-500/20 bg-zinc-900/80 p-4 backdrop-blur-xl">
               <div className="grid gap-6">
                 <motion.div
                   variants={fadeUp}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                  }}
-                  transition={{ duration: 0.25 }}
                   className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
                 >
                   <div className="rounded-xl bg-orange-500/10 p-4">
@@ -188,11 +147,6 @@ export default function About() {
 
                 <motion.div
                   variants={fadeUp}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                  }}
-                  transition={{ duration: 0.25 }}
                   className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
                 >
                   <div className="rounded-xl bg-orange-500/10 p-4">
@@ -210,11 +164,6 @@ export default function About() {
 
                 <motion.div
                   variants={fadeUp}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                  }}
-                  transition={{ duration: 0.25 }}
                   className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
                 >
                   <div className="rounded-xl bg-orange-500/10 p-4">

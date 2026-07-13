@@ -142,8 +142,6 @@ const fadeUp = {
 const card = {
   hidden: {
     opacity: 0,
-    y: 60,
-    scale: 0.95,
   },
   show: {
     opacity: 1,
@@ -187,7 +185,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="show"
           viewport={{
-            once: false,
+            once: true,
             amount: 0.3,
           }}
           className="mb-16 text-center"
@@ -222,7 +220,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="show"
           viewport={{
-            once: false,
+            once: true,
             amount: 0.15,
           }}
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
@@ -304,10 +302,10 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
-        <div className="mt-14 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-600"
           >
             See All Projects
             <ArrowUpRight size={16} />

@@ -122,7 +122,7 @@ export default function Navbar() {
                     key={link}
                     href="/projects"
                     onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
+                    className="text-base font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
                   >
                     {link}
                   </Link>
