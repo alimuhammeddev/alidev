@@ -15,6 +15,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import { BsCircleFill } from "react-icons/bs";
 
 const skills = [
   { name: "HTML5", icon: SiHtml5, color: "text-[#E34F26]" },
@@ -90,26 +91,26 @@ export default function Skills() {
             once: true,
             amount: 0.3,
           }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <motion.div
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur"
           >
-            <Sparkles size={16} />
+            <BsCircleFill size={7} />
             Frontend Technologies
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="mt-6 text-2xl font-bold md:text-4xl"
+            className="mt-4 text-2xl font-bold md:text-4xl"
           >
             Technologies I <span className="text-orange-500">Work With</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-5 max-w-2xl text-zinc-400"
+            className="mx-auto mt-3 max-w-2xl text-zinc-400"
           >
             Technologies I use to build fast, modern, responsive and accessible
             web applications.

@@ -9,6 +9,7 @@ import {
   File,
 } from "lucide-react";
 import { bungeeOutline } from "@/app/font";
+import { BsCircleFill } from "react-icons/bs";
 
 export default function Hero() {
   return (
@@ -30,29 +31,23 @@ export default function Hero() {
             {/* Badge */}
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-md">
-                <Sparkles size={16} />
+                <BsCircleFill size={7} />
                 Available for Freelance Projects
               </div>
             </div>
 
             <p className="mt-8 text-sm uppercase tracking-[5px] text-orange-400 sm:text-base">
-              Hello, I'm
+              Hello, I'm <span className="text-white">Ali Muhammed</span>
             </p>
 
-            <h1
-              className={`${bungeeOutline.className} mt-3 text-4xl leading-tight sm:text-5xl md:text-6xl lg:text-7xl`}
-            >
-              <span className="text-orange-500">ALI</span>_DEV
-            </h1>
-
-            <h2 className="mt-6 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
               Frontend
               <span className="text-orange-500"> React</span> &
               <span className="text-orange-500"> Next.js </span>
               Developer
             </h2>
 
-            <p className="mx-auto mt-8 max-w-xl text-base leading-7 text-zinc-400 lg:mx-0 lg:text-lg lg:leading-8">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-zinc-400 lg:mx-0 lg:text-lg lg:leading-8">
               I build modern, responsive and high performance web applications
               using React, Next.js and Tailwind CSS. I create fast, beautiful,
               and user friendly interfaces that deliver outstanding user
@@ -60,7 +55,7 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="https://wa.me/23407086587956"
                 className="group flex items-center justify-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
@@ -79,7 +74,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="mt-14 grid grid-cols-3 gap-5 text-center lg:flex lg:gap-12 lg:text-center">
+            <div className="mt-10 grid grid-cols-3 gap-5 text-center lg:flex lg:gap-12 lg:text-center">
               <div>
                 <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
                   10+

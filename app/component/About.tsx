@@ -68,7 +68,7 @@ export default function About() {
 
             <motion.h2
               variants={fadeUp}
-              className="mt-8 text-2xl font-bold leading-tight md:text-4xl"
+              className="mt-5 text-2xl font-bold leading-tight md:text-4xl"
             >
               Passionate About Building
               <span className="text-orange-500"> Beautiful </span>
@@ -77,9 +77,9 @@ export default function About() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-8 md:text-lg text-base leading-8 text-zinc-400"
+              className="mt-5 md:text-lg text-base leading-8 text-zinc-400"
             >
-              I'm Ali, a Frontend Developer specializing in React, Next.js and
+              I'm Ali Muhammed, a Frontend Developer specializing in React, Next.js and
               Tailwind CSS. I enjoy turning ideas into modern, responsive and
               high performance website and web applications with clean code and
               beautiful interfaces.
@@ -87,14 +87,14 @@ export default function About() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 md:text-lg text-base leading-8 text-zinc-400"
+              className="mt-3 md:text-lg text-base leading-8 text-zinc-400"
             >
               My goal is to create products that are fast, accessible, user
               friendly and visually appealing while delivering the best
               experience for every user.
             </motion.p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-7 space-y-5">
               {[
                 "Modern Responsive Websites",
                 "React & Next.js Development",
@@ -115,7 +115,7 @@ export default function About() {
 
             <a
               href="/projects"
-              className="group mt-10 inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
+              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
             >
               View Projects
               <ArrowRight className="transition-transform group-hover:translate-x-1" />

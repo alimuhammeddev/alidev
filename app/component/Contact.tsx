@@ -9,6 +9,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { BsCircleFill } from "react-icons/bs";
 
 const socials = [
   {
@@ -110,19 +111,19 @@ export default function Contact() {
             once: true,
             amount: 0.4,
           }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <motion.div
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400"
           >
-            <Sparkles size={16} />
+            <BsCircleFill size={7} />
             Get In Touch
           </motion.div>
 
           <motion.h2
             variants={fadeUp}
-            className="mt-6 text-2xl font-bold md:text-4xl"
+            className="mt-4 text-2xl font-bold md:text-4xl"
           >
             Let's Build Something{" "}
             <span className="text-orange-500">Amazing</span>
@@ -130,7 +131,7 @@ export default function Contact() {
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-5 max-w-2xl text-zinc-400"
+            className="mx-auto mt-3 max-w-2xl text-zinc-400"
           >
             Have a project in mind or want to collaborate? Feel free to reach
             out. I would love to hear from you.

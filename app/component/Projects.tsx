@@ -188,7 +188,7 @@ export default function Projects() {
             once: true,
             amount: 0.3,
           }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <motion.div
             variants={fadeUp}
@@ -200,14 +200,14 @@ export default function Projects() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-6 text-2xl font-bold md:text-4xl"
+            className="mt-4 text-2xl font-bold md:text-4xl"
           >
             Project <span className="text-orange-500">Work</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-5 max-w-2xl text-zinc-400"
+            className="mx-auto mt-3 max-w-2xl text-zinc-400"
           >
             A collection of projects built with React, Next.js, Tailwind CSS,
             and TypeScript focusing on beautiful UI, scalability and

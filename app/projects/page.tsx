@@ -185,18 +185,18 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="mb-16 text-center"
+          className="mb-10 text-center"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
             <FolderGit2 size={16} />
-            Portfolio
+            Projects
           </div>
 
-          <h1 className="mt-6 text-4xl font-bold md:text-5xl">
+          <h1 className="mt-4 text-2xl font-bold md:text-4xl">
             All <span className="text-orange-500">Projects</span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-zinc-400">
+          <p className="mx-auto mt-3 max-w-2xl text-zinc-400">
             Explore my collection of web applications built with React, Next.js,
             Tailwind CSS, TypeScript, and modern frontend technologies.
           </p>
@@ -217,7 +217,7 @@ export default function ProjectsPage() {
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }}
               key={index}
-              className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500"
+              className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:translate-y-0 hover:border-orange-500"
             >
               <div className="relative h-56 overflow-hidden">
                 <Image
@@ -267,7 +267,7 @@ export default function ProjectsPage() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-600"
+                    className="flex items-center gap-2 rounded-full bg-orange-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-500"
                   >
                     Live Demo
                     <ExternalLink size={16} />
