@@ -3,8 +3,8 @@ import "./globals.css";
 import { geistMono } from "@/app/font";
 
 export const metadata: Metadata = {
-  title: "ALi Muhammed",
-  description: "ALi Muhammed Frontend Developer",
+  title: "Ali Muhammed S.",
+  description: "Ali Muhammed S. - Frontend Developer",
 };
 
 export default function RootLayout({
