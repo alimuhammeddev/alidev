@@ -281,7 +281,7 @@ export default function Projects() {
 
                   <a
                     href={project.live}
-                    className="group/link flex items-center gap-2 rounded-full bg-orange-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-500"
+                    className="group/link flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-600"
                   >
                     Live Demo
                     <ExternalLink
@@ -299,7 +299,7 @@ export default function Projects() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-500"
+            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-600"
           >
             See All Projects
             <ArrowUpRight size={16} />

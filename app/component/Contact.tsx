@@ -252,7 +252,7 @@ export default function Contact() {
                 className="rounded-xl border border-zinc-700 bg-black px-4 py-3 outline-none transition focus:border-orange-500"
               />
 
-              <button className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-medium text-white transition hover:bg-orange-400">
+              <button className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-medium text-white transition hover:bg-orange-600">
                 Send Message
                 <Send size={18} />
               </button>

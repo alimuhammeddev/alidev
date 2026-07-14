@@ -115,7 +115,7 @@ export default function About() {
 
             <a
               href="/projects"
-              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
+              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
             >
               View Projects
               <ArrowRight className="transition-transform group-hover:translate-x-1" />

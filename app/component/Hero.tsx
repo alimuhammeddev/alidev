@@ -58,7 +58,7 @@ export default function Hero() {
             <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="https://wa.me/23407086587956"
-                className="group flex items-center justify-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
+                className="group flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
               >
                 Hire Me
                 <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -66,7 +66,7 @@ export default function Hero() {
 
               <a
                 href="/Ali-Dev.pdf"
-                className="group flex items-center justify-center gap-2 rounded-full border border-orange-500 px-8 py-4 font-semibold text-orange-400 transition hover:bg-orange-600 hover:text-white"
+                className="group flex items-center justify-center gap-2 rounded-full border border-orange-500 px-8 py-4 font-semibold text-orange-400 transition hover:bg-orange-500 hover:text-white"
               >
                 View Resume
                 <File className="transition-transform duration-300 group-hover:-translate-y-1" />
