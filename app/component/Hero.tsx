@@ -14,11 +14,11 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-black text-white">
       {/* Background Glow */}
-      <div className="absolute left-1/2 top-0 h-87.5 w-87.5 -translate-x-1/2 rounded-full bg-orange-500/20 blur-[120px] lg:h-162.5 lg:w-162.5 lg:blur-[180px]" />
+      <div className="absolute left-1/2 top-0 h-87.5 w-87.5 -translate-x-1/2 rounded-full bg-orange-500/20 blur-[200px] lg:h-162.5 lg:w-162.5 lg:blur-[500px]" />
 
-      <div className="absolute bottom-0 left-0 h-56 w-56 rounded-full bg-orange-500/10 blur-[100px] lg:h-72 lg:w-72 lg:blur-[140px]" />
+      <div className="absolute bottom-0 left-0 h-56 w-56 rounded-full bg-orange-500/10 blur-[200px] lg:h-72 lg:w-72 lg:blur-[500px]" />
 
-      <div className="absolute right-0 top-40 h-64 w-64 rounded-full bg-orange-600/10 blur-[100px] lg:h-96 lg:w-96 lg:blur-[160px]" />
+      <div className="absolute right-0 top-40 h-64 w-64 rounded-full bg-orange-600/10 blur-[200px] lg:h-96 lg:w-96 lg:blur-[500px]" />
 
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
@@ -63,7 +63,7 @@ export default function Hero() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="https://wa.me/23407086587956"
-                className="group flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
+                className="group flex items-center justify-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
               >
                 Hire Me
                 <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -71,7 +71,7 @@ export default function Hero() {
 
               <a
                 href="/Ali-Dev.pdf"
-                className="group flex items-center justify-center gap-2 rounded-full border border-orange-500 px-8 py-4 font-semibold text-orange-400 transition hover:bg-orange-500 hover:text-white"
+                className="group flex items-center justify-center gap-2 rounded-full border border-orange-500 px-8 py-4 font-semibold text-orange-400 transition hover:bg-orange-600 hover:text-white"
               >
                 View Resume
                 <File className="transition-transform duration-300 group-hover:-translate-y-1" />

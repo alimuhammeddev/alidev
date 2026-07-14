@@ -205,18 +205,13 @@ export default function Contact() {
                   return (
                     <motion.a
                       variants={fadeUp}
-                      whileHover={{
-                        y: -6,
-                        scale: 1.1,
-                        rotate: 5,
-                      }}
                       whileTap={{
                         scale: 0.9,
                       }}
                       key={social.name}
                       href={social.link}
                       target="_blank"
-                      className="group rounded-xl border border-zinc-700 bg-zinc-800 p-3 transition-all duration-300 hover:-translate-y-1 hover:border-orange-500"
+                      className="group rounded-xl border border-zinc-700 bg-zinc-800 p-3 transition-all duration-300 hover:border-orange-500"
                     >
                       <Icon
                         size={16}

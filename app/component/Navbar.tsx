@@ -29,7 +29,7 @@ export default function Navbar() {
     >
       {/* Navbar Background */}
       <div
-        className={`border border-orange-500/20 bg-black/95 backdrop-blur-xl shadow-[0_8px_35px_rgba(249,115,22,0.18)] transition-all duration-700 ease-in-out ${
+        className={`border border-orange-500/20 bg-black backdrop-blur-xl transition-all duration-700 ease-in-out ${
           scrolled ? "rounded-none" : "mx-4 rounded-full"
         }`}
       >
@@ -37,19 +37,9 @@ export default function Navbar() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between md:px-0 px-5">
           {/* Logo */}
           <a href="/" className="group flex items-center gap-2">
-            <Star
-              size={15}
-              className="fill-orange-500 text-orange-500 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110"
-            />
-
             <h1 className={`${bungeeOutline.className} text-4xl text-white`}>
               <span className="text-orange-500">ALi</span>_Dev
             </h1>
-
-            <Star
-              size={15}
-              className="fill-orange-500 text-orange-500 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110"
-            />
           </a>
 
           {/* Desktop Nav */}

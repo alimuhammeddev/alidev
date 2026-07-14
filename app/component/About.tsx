@@ -115,7 +115,7 @@ export default function About() {
 
             <a
               href="/projects"
-              className="group mt-10 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
+              className="group mt-10 inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold transition hover:bg-orange-500"
             >
               View Projects
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -124,13 +124,13 @@ export default function About() {
 
           {/* RIGHT */}
           <motion.div variants={fadeUp} className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-3xl" />
+            <div className="absolute inset-0 rounded-3xl bg-orange-500/10" />
 
-            <div className="relative rounded-3xl border border-orange-500/20 bg-zinc-900/80 p-4 backdrop-blur-xl">
+            <div className="relative rounded-3xl border border-orange-500/20 bg-zinc-900 p-4 backdrop-blur-xl">
               <div className="grid gap-6">
                 <motion.div
                   variants={fadeUp}
-                  className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
+                  className="flex items-center gap-5 rounded-2xl bg-black/40 p-6"
                 >
                   <div className="rounded-xl bg-orange-500/10 p-4">
                     <Code2 className="text-orange-500" />
@@ -147,7 +147,7 @@ export default function About() {
 
                 <motion.div
                   variants={fadeUp}
-                  className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
+                  className="flex items-center gap-5 rounded-2xl bg-black/40 p-6"
                 >
                   <div className="rounded-xl bg-orange-500/10 p-4">
                     <Briefcase className="text-orange-500" />
@@ -164,7 +164,7 @@ export default function About() {
 
                 <motion.div
                   variants={fadeUp}
-                  className="flex items-center gap-5 rounded-2xl border border-orange-500/10 bg-black/40 p-6"
+                  className="flex items-center gap-5 rounded-2xl bg-black/40 p-6"
                 >
                   <div className="rounded-xl bg-orange-500/10 p-4">
                     <Award className="text-orange-500" />

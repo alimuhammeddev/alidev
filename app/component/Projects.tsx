@@ -229,13 +229,7 @@ export default function Projects() {
             <motion.div
               key={index}
               variants={card}
-              whileHover={{
-                y: -5,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-              className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500"
+              className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 hover:border-orange-500"
             >
               {/* Image */}
               <div className="relative overflow-hidden">
@@ -287,7 +281,7 @@ export default function Projects() {
 
                   <a
                     href={project.live}
-                    className="group/link flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-600"
+                    className="group/link flex items-center gap-2 rounded-full bg-orange-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-500"
                   >
                     Live Demo
                     <ExternalLink
@@ -305,7 +299,7 @@ export default function Projects() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-600"
+            className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-500"
           >
             See All Projects
             <ArrowUpRight size={16} />
