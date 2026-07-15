@@ -86,9 +86,10 @@ export default function Navbar() {
           {/* Mobile Button */}
           <button
             onClick={() => setOpen(!open)}
+            aria-label="mobile menu"
             className="rounded-full p-2 text-orange-500 transition hover:bg-orange-500/10 lg:hidden"
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+            {open ? <X size={28} /> : <Menu size={28} aria-hidden="true" />}
           </button>
         </div>
       </div>

@@ -152,15 +152,14 @@ export default function Contact() {
             variants={fadeLeft}
             className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5"
           >
-            <h3 className="md:text-2xl text-xl font-semibold">Contact Information</h3>
+            <h3 className="md:text-2xl text-xl font-semibold">
+              Contact Information
+            </h3>
 
             <div className="mt-8 space-y-6">
-              <motion.div
-                variants={fadeUp}
-                className="flex items-center gap-4"
-              >
+              <motion.div variants={fadeUp} className="flex items-center gap-4">
                 <div className="rounded-xl bg-orange-500/10 p-3 text-orange-500">
-                  <Mail />
+                  <Mail aria-hidden="true"/>
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">Email</p>
@@ -168,12 +167,9 @@ export default function Contact() {
                 </div>
               </motion.div>
 
-              <motion.div
-                variants={fadeUp}
-                className="flex items-center gap-4"
-              >
+              <motion.div variants={fadeUp} className="flex items-center gap-4">
                 <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
-                  <Phone />
+                  <Phone aria-hidden="true"/>
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">Phone</p>
@@ -181,12 +177,9 @@ export default function Contact() {
                 </div>
               </motion.div>
 
-              <motion.div
-                variants={fadeUp}
-                className="flex items-center gap-4"
-              >
+              <motion.div variants={fadeUp} className="flex items-center gap-4">
                 <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
-                  <MapPin />
+                  <MapPin aria-hidden="true"/>
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">Location</p>
@@ -212,12 +205,19 @@ export default function Contact() {
                       key={social.name}
                       href={social.link}
                       target="_blank"
+                      aria-label={`Visit my ${social.name} profile`}
+                      title={social.name}
                       className="group rounded-xl border border-zinc-700 bg-zinc-800 p-3 transition-all duration-300 hover:border-orange-500"
                     >
                       <Icon
                         size={16}
+                        aria-hidden="true"
+                        focusable="false"
                         className="text-zinc-300 transition group-hover:text-orange-500"
                       />
+                      <span className="sr-only">
+                        Visit my {social.name} profile
+                      </span>
                     </motion.a>
                   );
                 })}
@@ -226,7 +226,10 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.form variants={fadeRight} className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5">
+          <motion.form
+            variants={fadeRight}
+            className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5"
+          >
             <div className="grid gap-5">
               <input
                 type="text"
@@ -254,7 +257,7 @@ export default function Contact() {
 
               <button className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-medium text-white transition hover:bg-orange-600">
                 Send Message
-                <Send size={18} />
+                <Send size={18} aria-hidden="true" />
               </button>
             </div>
           </motion.form>

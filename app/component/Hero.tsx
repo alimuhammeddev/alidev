@@ -31,7 +31,7 @@ export default function Hero() {
             {/* Badge */}
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-md">
-                <BsCircleFill size={7} />
+                <BsCircleFill size={7} aria-hidden="true" />
                 Available for Freelance Projects
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function Hero() {
             <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="https://wa.me/23407086587956"
-                className="group flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
+                className="group flex items-center justify-center gap-2 rounded-full bg-orange-500 text-zinc-900 px-8 py-4 font-semibold transition hover:bg-orange-600"
               >
                 Hire Me
                 <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1" />

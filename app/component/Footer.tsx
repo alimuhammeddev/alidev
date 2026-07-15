@@ -11,7 +11,7 @@ export default function Footer() {
           <span className="text-orange-500">ALi</span>_Dev
         </h1>
 
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-zinc-400">
           © {new Date().getFullYear()} All rights reserved.
         </p>
 

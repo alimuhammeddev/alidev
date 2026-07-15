@@ -299,7 +299,7 @@ export default function Projects() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-600"
+            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-zinc-900 transition-all duration-300 hover:bg-orange-600"
           >
             See All Projects
             <ArrowUpRight size={16} />
