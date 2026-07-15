@@ -148,6 +148,8 @@ export default function Skills() {
                     <Icon
                       size={52}
                       className={`${skill.color} transition-transform duration-300`}
+                      aria-hidden="true"
+                      focusable="false"
                     />
                   </motion.div>
 
