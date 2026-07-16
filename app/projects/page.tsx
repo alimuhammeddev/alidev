@@ -116,44 +116,6 @@ const projects = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants = {
-  hidden: {
-    scale: 1.15,
-    opacity: 0,
-  },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
-
 export default function ProjectsPage() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black text-white">
@@ -166,12 +128,7 @@ export default function ProjectsPage() {
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.15 }}
-        className="relative mx-auto max-w-7xl px-5 py-20"
-      >
+      <div className="relative mx-auto max-w-7xl px-5 py-20">
         {/* Header */}
         <Link
           href="/"
@@ -181,12 +138,7 @@ export default function ProjectsPage() {
           Back to Home
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.15 }}
-          className="mb-10 text-center"
-        >
+        <div className="mb-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
             <FolderGit2 size={16} />
             Projects
@@ -200,22 +152,12 @@ export default function ProjectsPage() {
             Explore my collection of web applications built with React, Next.js,
             Tailwind CSS, TypeScript, and modern frontend technologies.
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-        >
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
+            <div
               key={index}
               className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:translate-y-0 hover:border-orange-500"
             >
@@ -235,7 +177,9 @@ export default function ProjectsPage() {
 
               <div className="space-y-5 p-6">
                 <div>
-                  <h2 className="md:text-2xl text-xl font-bold">{project.title}</h2>
+                  <h2 className="md:text-2xl text-xl font-bold">
+                    {project.title}
+                  </h2>
 
                   <p className="mt-3 text-sm leading-7 text-zinc-400">
                     {project.description}
@@ -277,10 +221,10 @@ export default function ProjectsPage() {
               </div>
 
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-orange-500 transition-all duration-500 group-hover:w-full" />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
