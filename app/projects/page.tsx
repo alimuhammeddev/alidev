@@ -224,6 +224,7 @@ export default function ProjectsPage() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  preload
                   className="object-cover transition duration-700 group-hover:scale-110"
                 />
 
