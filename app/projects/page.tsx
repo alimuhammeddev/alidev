@@ -227,7 +227,7 @@ export default function ProjectsPage() {
                   className="object-cover transition duration-700 group-hover:scale-110"
                 />
 
-                <span className="absolute left-5 top-5 rounded-full bg-orange-600 px-4 py-2 font-bold text-white">
+                <span className="absolute left-5 top-5 rounded-full bg-orange-500 px-4 py-2 font-bold text-gray-900">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
@@ -267,7 +267,7 @@ export default function ProjectsPage() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-600"
+                    className="flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900 transition hover:bg-orange-600"
                   >
                     Live Demo
                     <ExternalLink size={16} />
