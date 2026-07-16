@@ -157,7 +157,7 @@ export default function About() {
                     <h3 className="font-semibold">Real Projects</h3>
 
                     <p className="mt-1 text-sm text-zinc-400">
-                      Experience building production-ready web apps.
+                      Experience building production-ready websites and web apps.
                     </p>
                   </div>
                 </motion.div>

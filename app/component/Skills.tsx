@@ -113,7 +113,7 @@ export default function Skills() {
             className="mx-auto mt-3 max-w-2xl text-zinc-400"
           >
             Technologies I use to build fast, modern, responsive and accessible
-            web applications.
+            websites and web applications.
           </motion.p>
         </motion.div>
 

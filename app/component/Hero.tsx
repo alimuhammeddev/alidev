@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
 
-      <div className="relative mx-auto flex min-h-svh max-w-7xl items-center px-5 md:pt-48 pt-36 lg:min-h-screen md:px-0">
+      <div className="relative mx-auto flex min-h-svh max-w-7xl items-center px-5 md:pt-48 pt-36 lg:min-h-screen md:px-0 mb-5">
         <div className="grid w-full items-center gap-16 lg:grid-cols-2">
           {/* LEFT */}
           <div className="text-center lg:text-left">
@@ -48,7 +48,7 @@ export default function Hero() {
             </h2>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-zinc-400 lg:mx-0 lg:text-lg lg:leading-8">
-              I build modern, responsive and high performance web applications
+              I build modern, responsive and high performance websites and web applications
               using React, Next.js and Tailwind CSS. I create fast, beautiful,
               and user friendly interfaces that deliver outstanding user
               experiences.
@@ -121,7 +121,7 @@ export default function Hero() {
                 {`const developer = {
   name: "Ali Muhammed S.",
 
-  role: "Frontend Developer",
+  role: "Website Developer",
 
   stack: [
     "React",
@@ -139,7 +139,7 @@ export default function Hero() {
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute -left-8 top-10 hidden items-center gap-3 rounded-2xl border border-orange-500/20 bg-zinc-900 px-5 py-3 shadow-xl backdrop-blur-xl lg:flex">
+            <div className="absolute -left-8 -top-9 hidden items-center gap-3 rounded-2xl border border-orange-500/20 bg-zinc-900 px-5 py-3 shadow-xl backdrop-blur-xl lg:flex">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10">
                 <Zap size={20} className="text-orange-500" />
               </div>
