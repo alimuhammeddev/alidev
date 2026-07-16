@@ -169,7 +169,7 @@ export default function ProjectsPage() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.15 }}
         className="relative mx-auto max-w-7xl px-5 py-20"
       >
         {/* Header */}
@@ -184,7 +184,7 @@ export default function ProjectsPage() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.15 }}
           className="mb-10 text-center"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
