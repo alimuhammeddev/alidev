@@ -98,7 +98,7 @@ export default function Skills() {
             className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur"
           >
             <BsCircleFill size={7} />
-            Frontend Technologies
+            The Technology Behind Every Project
           </motion.div>
 
           <motion.h2
@@ -139,10 +139,6 @@ export default function Skills() {
               >
                 <div className="flex flex-col items-center">
                   <motion.div
-                    whileHover={{
-                      rotate: 8,
-                      scale: 1.15,
-                    }}
                     transition={{ duration: 0.25 }}
                   >
                     <Icon

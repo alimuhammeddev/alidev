@@ -63,43 +63,47 @@ export default function About() {
               className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-xl"
             >
               <User size={16} />
-              About Me
+              Why Work With Me
             </motion.div>
 
             <motion.h2
               variants={fadeUp}
               className="mt-5 text-2xl font-bold leading-tight md:text-4xl"
             >
-              Passionate About Building
-              <span className="text-orange-500"> Beautiful </span>
-              Digital Experiences.
+              Helping Businesses Stand Out With
+              <span className="text-orange-500"> Modern Websites </span>
+              That Deliver Results.
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               className="mt-5 md:text-lg text-base leading-8 text-zinc-400"
             >
-              I'm Ali Muhammed, a Frontend Developer specializing in React, Next.js and
-              Tailwind CSS. I enjoy turning ideas into modern, responsive and
-              high performance website and web applications with clean code and
-              beautiful interfaces.
+              I'm Ali Muhammed, a website developer who helps businesses
+              transform their ideas into modern, high performing websites and
+              web applications. Whether you're launching a new business,
+              refreshing your online presence, or building a custom platform, I
+              create digital solutions that build trust, engage customers,
+              support business growth and help you connect with more customers.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="mt-3 md:text-lg text-base leading-8 text-zinc-400"
             >
-              My goal is to create products that are fast, accessible, user
-              friendly and visually appealing while delivering the best
-              experience for every user.
+              Every project I build is designed with performance,
+              responsiveness, accessibility, and user experience in mind. I
+              focus on creating websites that not only look professional but
+              also load quickly, work seamlessly on every device, and leave a
+              lasting impression on your customers.
             </motion.p>
 
             <div className="mt-7 space-y-5">
               {[
-                "Modern Responsive Websites",
-                "React & Next.js Development",
-                "Beautiful UI/UX Implementation",
-                "Performance Optimization",
+                "Professional websites that build trust",
+                "Fast-loading and SEO-friendly development",
+                "Responsive across all devices",
+                "Long-term support and scalable solutions",
               ].map((item) => (
                 <motion.div
                   variants={fadeUp}
@@ -108,16 +112,16 @@ export default function About() {
                 >
                   <CheckCircle2 size={22} className="text-orange-500" />
 
-                  <span className="text-zinc-300">{item}</span>
+                  <span className="text-zinc-400">{item}</span>
                 </motion.div>
               ))}
             </div>
 
             <a
               href="/projects"
-              className="group mt-7 inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
+              className="group mt-7 inline-flex text-black items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
             >
-              View Projects
+              See My Work
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
@@ -157,7 +161,8 @@ export default function About() {
                     <h3 className="font-semibold">Real Projects</h3>
 
                     <p className="mt-1 text-sm text-zinc-400">
-                      Experience building production-ready websites and web apps.
+                      Experience building production ready websites and web
+                      apps.
                     </p>
                   </div>
                 </motion.div>
@@ -201,7 +206,9 @@ export default function About() {
                 <div className="text-center">
                   <h3 className="text-3xl font-bold text-orange-500">100%</h3>
 
-                  <p className="mt-2 text-sm text-zinc-400">Responsive</p>
+                  <p className="mt-2 text-sm text-zinc-400">
+                    100% Mobile Optimized
+                  </p>
                 </div>
               </motion.div>
             </div>

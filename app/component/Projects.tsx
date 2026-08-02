@@ -244,7 +244,7 @@ export default function Projects() {
 
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
 
-                <span className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 font-semibold text-white">
+                <span className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 font-semibold text-black">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
@@ -281,7 +281,7 @@ export default function Projects() {
 
                   <a
                     href={project.live}
-                    className="group/link flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-orange-600"
+                    className="group/link flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-black transition hover:bg-orange-600"
                   >
                     Live Demo
                     <ExternalLink

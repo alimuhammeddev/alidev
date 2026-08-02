@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
 
       <div className="relative mx-auto flex min-h-svh max-w-7xl items-center px-5 md:pt-48 pt-36 lg:min-h-screen md:px-0 mb-5">
-        <div className="grid w-full items-center gap-16 lg:grid-cols-2">
+        <div className="grid w-full gap-16 lg:grid-cols-2">
           {/* LEFT */}
           <div className="text-center lg:text-left">
             {/* Badge */}
@@ -37,21 +37,23 @@ export default function Hero() {
             </div>
 
             <p className="mt-8 text-sm uppercase tracking-[5px] text-orange-400 sm:text-base">
-              Hello, I'm <span className="text-white">Ali Muhammed</span>
+              Hi, I'm <span className="text-white">Ali Muhammed</span> —
+              Building Websites That Grow Businesses
             </p>
 
-            <h2 className="mt-4 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-              Frontend
-              <span className="text-orange-500"> React</span> &
-              <span className="text-orange-500"> Next.js </span>
-              Developer
+            <h2 className="mt-4 text-2xl font-bold leading-tight md:text-3xl lg:text-5xl">
+              I Build{" "}
+              <span className="text-orange-500">Fast, Modern Websites</span>{" "}
+              That Help Businesses{" "}
+              <span className="text-orange-500">Get More Customers.</span>
             </h2>
 
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-zinc-400 lg:mx-0 lg:text-lg lg:leading-8">
-              I build modern, responsive and high performance websites and web applications
-              using React, Next.js and Tailwind CSS. I create fast, beautiful,
-              and user friendly interfaces that deliver outstanding user
-              experiences.
+              I've helped businesses and brands launch modern websites that are
+              visually appealing, mobile friendly, and optimized for
+              performance. From concept to deployment, I build digital
+              experiences that attract customers, strengthen credibility, and
+              help businesses grow online.
             </p>
 
             {/* Buttons */}
@@ -95,16 +97,13 @@ export default function Hero() {
                 <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
                   100%
                 </h3>
-                <p className="mt-2 text-sm text-zinc-400">Responsive</p>
+                <p className="mt-2 text-sm text-zinc-400">100% Mobile Optimized</p>
               </div>
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className="relative flex justify-center">
-            {/* Glow */}
-            <div className="absolute h-75 w-75 rounded-full bg-orange-500/20 blur-[80px] sm:h-95 sm:w-95 lg:h-112.5 lg:w-112.5 lg:blur-[100px]" />
-
+          <div className="relative flex justify-center mb-10">
             {/* Code Card */}
             <div className="relative w-full max-w-sm rounded-3xl border border-orange-500/20 bg-zinc-900/80 p-6 shadow-2xl backdrop-blur-xl sm:max-w-md lg:p-8">
               <div className="mb-6 flex items-center justify-between">
@@ -118,22 +117,26 @@ export default function Hero() {
               </div>
 
               <pre className="overflow-x-auto text-xs leading-7 text-zinc-300 sm:text-sm">
-                {`const developer = {
-  name: "Ali Muhammed S.",
+                {`const yourProject = {
+  goal: "Grow your business online",
 
-  role: "Website Developer",
-
-  stack: [
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "JavaScript",
-    "TypeScript"
+  services: [
+    "Business Websites",
+    "Landing Pages",
+    "Web Applications",
+    "UI Development",
+    "Website Redesign"
   ],
 
-  passion: "Building beautiful UI",
+  results: [
+    "Fast loading performance",
+    "Mobile responsive design",
+    "SEO-friendly structure",
+    "Modern user experience",
+    "Clean, scalable code"
+  ],
 
-  available: true
+  status: "Ready to build yours"
 }`}
               </pre>
             </div>
