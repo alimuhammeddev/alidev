@@ -97,7 +97,7 @@ export default function Hero() {
                 <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
                   100%
                 </h3>
-                <p className="mt-2 text-sm text-zinc-400">100% Mobile Optimized</p>
+                <p className="mt-2 text-sm text-zinc-400">Mobile Optimized</p>
               </div>
             </div>
           </div>

@@ -207,7 +207,7 @@ export default function About() {
                   <h3 className="text-3xl font-bold text-orange-500">100%</h3>
 
                   <p className="mt-2 text-sm text-zinc-400">
-                    100% Mobile Optimized
+                    Mobile Optimized
                   </p>
                 </div>
               </motion.div>
