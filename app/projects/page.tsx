@@ -67,7 +67,7 @@ const projects = [
     image: analytica,
     technologies: ["React.js", "Tailwind CSS"],
     github: "https://github.com/alimuhammeddev/Analytica-Haven",
-    live: "https://www.analyticahaven.org/",
+    live: "https://www.analyticahavenhub.org/",
   },
   {
     title: "AVS Consulting",
