@@ -67,7 +67,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/Ali-Dev.pdf"
+                href="/Ali Resume.pdf"
                 className="group flex items-center justify-center gap-2 rounded-full border border-orange-500 px-8 py-4 font-semibold text-orange-400 transition hover:bg-orange-500 hover:text-white"
               >
                 View Resume
