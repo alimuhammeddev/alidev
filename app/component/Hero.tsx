@@ -86,7 +86,7 @@ export default function Hero() {
 
               <div>
                 <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
-                  2+
+                  4+
                 </h3>
                 <p className="mt-2 text-sm text-zinc-400">
                   Years of Experience
