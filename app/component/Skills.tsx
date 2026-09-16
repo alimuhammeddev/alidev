@@ -1,6 +1,5 @@
 "use client";
 
-import { Sparkles, Code2 } from "lucide-react";
 import {
   SiHtml5,
   SiCss,
@@ -13,6 +12,7 @@ import {
   SiGithub,
   SiFigma,
   SiVercel,
+  SiFirebase,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import { BsCircleFill } from "react-icons/bs";
@@ -25,7 +25,7 @@ const skills = [
   { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
-  { name: "VS Code", icon: Code2, color: "text-[#7952B3]" },
+  { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
   { name: "Git", icon: SiGit, color: "text-[#F05032]" },
   { name: "GitHub", icon: SiGithub, color: "text-white" },
   { name: "Figma", icon: SiFigma, color: "text-[#F24E1E]" },
@@ -138,9 +138,7 @@ export default function Skills() {
                 className="group rounded-2xl border border-zinc-800 bg-zinc-900 p-6 hover:border-orange-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)]"
               >
                 <div className="flex flex-col items-center">
-                  <motion.div
-                    transition={{ duration: 0.25 }}
-                  >
+                  <motion.div transition={{ duration: 0.25 }}>
                     <Icon
                       size={52}
                       className={`${skill.color} transition-transform duration-300`}
