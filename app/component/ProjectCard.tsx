@@ -18,7 +18,7 @@ type ProjectCardProps = {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <article className="group flex h-full flex-col rounded-3xl border border-[#e4ded2] bg-[#fbf9f4] p-3 transition-colors duration-300 hover:border-[#a95132]">
-      <div className="relative aspect-[16/11] overflow-hidden rounded-2xl bg-[#e9e3d8]">
+      <div className="relative aspect-16/11 overflow-hidden rounded-2xl bg-[#e9e3d8]">
         <Image
           src={project.image}
           alt={`${project.title} website preview`}
