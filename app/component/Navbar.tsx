@@ -10,13 +10,12 @@ const links = ["Home", "About", "Projects", "Skills", "Contact"];
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const renderLink = (label: string, mobile = false) =>
+  const renderLink = (label: string) =>
     label === "Projects" ? (
       <Link
         key={label}
         href="/projects"
-        onClick={() => setOpen(false)}
-        className={`transition-colors hover:text-[#a95132] ${mobile ? "text-lg" : "text-sm"}`}
+        className="text-sm transition-colors hover:text-[#a95132]"
       >
         {label}
       </Link>
@@ -24,8 +23,7 @@ export default function Navbar() {
       <a
         key={label}
         href={`#${label.toLowerCase()}`}
-        onClick={() => setOpen(false)}
-        className={`transition-colors hover:text-[#a95132] ${mobile ? "text-lg" : "text-sm"}`}
+        className="text-sm transition-colors hover:text-[#a95132]"
       >
         {label}
       </a>
@@ -33,7 +31,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#ded8cc] bg-[#f5f2eb]">
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 lg:px-8">
+      <div className="mx-auto flex h-19 max-w-7xl items-center justify-between px-5 lg:px-8">
         <Brand />
 
         <nav aria-label="Main navigation" className="hidden items-center gap-9 lg:flex">
@@ -63,15 +61,62 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-[#ded8cc] bg-[#f5f2eb] transition-[max-height,opacity] duration-300 lg:hidden ${
-          open ? "max-h-96 opacity-100" : "max-h-0 border-t-transparent opacity-0"
+        onClick={() => setOpen(false)}
+        className={`fixed inset-x-0 bottom-0 top-19 bg-[#252720]/40 transition-opacity duration-300 lg:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        aria-hidden="true"
+      />
+
+      <div
+        className={`absolute inset-x-0 top-full border-b border-[#ded8cc] bg-[#f5f2eb] shadow-xl transition-all duration-300 lg:hidden ${
+          open
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <nav aria-label="Mobile navigation" className="mx-auto grid max-w-7xl gap-5 px-6 py-6">
-          {links.map((link) => renderLink(link, true))}
+        <nav aria-label="Mobile navigation" className="mx-auto max-w-7xl px-5 pb-6 pt-2">
+          <ul>
+            {links.map((label, i) => {
+              const isProjects = label === "Projects";
+              const className =
+                "group flex items-center justify-between border-b border-[#ded8cc] py-4 text-xl font-medium text-[#252720] transition-colors hover:text-[#a95132]";
+              const content = (
+                <>
+                  <span className="flex items-baseline gap-4">
+                    <span className="text-xs font-normal tabular-nums text-[#a95132]">
+                      0{i + 1}
+                    </span>
+                    {label}
+                  </span>
+                  <ArrowRight
+                    size={18}
+                    className="text-[#a95132] opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
+                  />
+                </>
+              );
+              return (
+                <li key={label}>
+                  {isProjects ? (
+                    <Link href="/projects" onClick={() => setOpen(false)} className={className}>
+                      {content}
+                    </Link>
+                  ) : (
+                    <a
+                      href={`#${label.toLowerCase()}`}
+                      onClick={() => setOpen(false)}
+                      className={className}
+                    >
+                      {content}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
           <a
             href="https://wa.me/23407086587956"
-            className="mt-1 inline-flex items-center gap-2 text-lg font-medium text-[#a95132]"
+            className="mt-6 flex items-center justify-center gap-2 bg-[#a95132] py-3.5 font-medium text-[#f5f2eb] transition-colors hover:bg-[#252720]"
           >
             Let&apos;s talk <ArrowRight size={18} />
           </a>
