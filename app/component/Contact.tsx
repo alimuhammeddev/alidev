@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import {
   FaGithub,
   FaLinkedin,
@@ -94,14 +94,9 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-black text-white"
+      className="border-t border-[#ded8cc] bg-[#efebe3] text-[#252720]"
     >
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[150px]" />
-
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
-
-      <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-0 mt-28 mb-20">
+      <div className="mx-auto w-full max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
         {/* Heading */}
         <motion.div
           variants={container}
@@ -111,11 +106,11 @@ export default function Contact() {
             once: true,
             amount: 0.4,
           }}
-          className="mb-10 text-center"
+          className="mb-12 text-center"
         >
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400"
+            className="inline-flex items-center gap-2 border-b border-[#a95132] pb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#a95132]"
           >
             <BsCircleFill size={7} />
             Get In Touch
@@ -123,15 +118,15 @@ export default function Contact() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-4 text-2xl font-bold md:text-4xl"
+            className="mt-6 text-3xl font-medium tracking-[-0.04em] md:text-5xl"
           >
-            Let's Build Something{" "}
-            <span className="text-orange-500">Amazing</span>
+            Let&apos;s Build Something{" "}
+            <span className="text-[#a95132]">Amazing</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-3 max-w-2xl text-zinc-400"
+            className="mx-auto mt-4 max-w-2xl text-[#716f66]"
           >
             Have a project in mind or want to collaborate? Feel free to reach
             out. I would love to hear from you.
@@ -150,7 +145,7 @@ export default function Contact() {
           {/* Contact Info */}
           <motion.div
             variants={fadeLeft}
-            className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5"
+            className="border border-[#ded8cc] bg-[#f5f2eb] p-6 md:p-8"
           >
             <h3 className="md:text-2xl text-xl font-semibold">
               Contact Information
@@ -158,31 +153,31 @@ export default function Contact() {
 
             <div className="mt-8 space-y-6">
               <motion.div variants={fadeUp} className="flex items-center gap-4">
-                <div className="rounded-xl bg-orange-500/10 p-3 text-orange-500">
-                  <Mail aria-hidden="true"/>
+                <div className="border border-[#ded8cc] p-3 text-[#a95132]">
+                  <Mail aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-400">Email</p>
+                  <p className="text-sm text-[#716f66]">Email</p>
                   <p className="break-all">muhammedaliali2020@gmail.com</p>
                 </div>
               </motion.div>
 
               <motion.div variants={fadeUp} className="flex items-center gap-4">
-                <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
-                  <Phone aria-hidden="true"/>
+                <div className="border border-[#ded8cc] p-2 text-[#a95132]">
+                  <Phone aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-400">Phone</p>
+                  <p className="text-sm text-[#716f66]">Phone</p>
                   <p>+234 708 658 7956</p>
                 </div>
               </motion.div>
 
               <motion.div variants={fadeUp} className="flex items-center gap-4">
-                <div className="rounded-xl bg-orange-500/10 p-2 text-orange-500">
-                  <MapPin aria-hidden="true"/>
+                <div className="border border-[#ded8cc] p-2 text-[#a95132]">
+                  <MapPin aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-400">Location</p>
+                  <p className="text-sm text-[#716f66]">Location</p>
                   <p>Abuja, Nigeria</p>
                 </div>
               </motion.div>
@@ -207,13 +202,13 @@ export default function Contact() {
                       target="_blank"
                       aria-label={`Visit my ${social.name} profile`}
                       title={social.name}
-                      className="group rounded-xl border border-zinc-700 bg-zinc-800 p-3 transition-all duration-300 hover:border-orange-500"
+                      className="group border border-[#ded8cc] p-3 transition-colors duration-300 hover:border-[#a95132]"
                     >
                       <Icon
                         size={16}
                         aria-hidden="true"
                         focusable="false"
-                        className="text-zinc-300 transition group-hover:text-orange-500"
+                        className="text-[#55564f] transition group-hover:text-[#a95132]"
                       />
                       <span className="sr-only">
                         Visit my {social.name} profile
@@ -228,34 +223,34 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.form
             variants={fadeRight}
-            className="rounded-2xl border border-zinc-800 bg-zinc-900 md:p-8 p-5"
+            className="border border-[#ded8cc] bg-[#f5f2eb] p-6 md:p-8"
           >
             <div className="grid gap-5">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="rounded-xl border border-zinc-700 bg-black px-4 py-3 outline-none transition focus:border-orange-500"
+                className="border border-[#ded8cc] bg-transparent px-4 py-3 text-[#252720] placeholder:text-[#8c897f] outline-none transition-colors focus:border-[#a95132]"
               />
 
               <input
                 type="email"
                 placeholder="Your Email"
-                className="rounded-xl border border-zinc-700 bg-black px-4 py-3 outline-none transition focus:border-orange-500"
+                className="border border-[#ded8cc] bg-transparent px-4 py-3 text-[#252720] placeholder:text-[#8c897f] outline-none transition-colors focus:border-[#a95132]"
               />
 
               <input
                 type="text"
                 placeholder="Subject"
-                className="rounded-xl border border-zinc-700 bg-black px-4 py-3 outline-none transition focus:border-orange-500"
+                className="border border-[#ded8cc] bg-transparent px-4 py-3 text-[#252720] placeholder:text-[#8c897f] outline-none transition-colors focus:border-[#a95132]"
               />
 
               <textarea
                 rows={5}
                 placeholder="Your Message"
-                className="rounded-xl border border-zinc-700 bg-black px-4 py-3 outline-none transition focus:border-orange-500"
+                className="resize-y border border-[#ded8cc] bg-transparent px-4 py-3 text-[#252720] placeholder:text-[#8c897f] outline-none transition-colors focus:border-[#a95132]"
               />
 
-              <button className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-medium text-black transition hover:bg-orange-600">
+              <button className="flex items-center justify-center gap-2 bg-[#a95132] py-3 font-medium text-[#fffaf2] transition-colors hover:bg-[#87412b]">
                 Send Message
                 <Send size={18} aria-hidden="true" />
               </button>

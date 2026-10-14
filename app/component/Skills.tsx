@@ -23,13 +23,13 @@ const skills = [
   { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
   { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
   { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
-  { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-[#252720]" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
   { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
   { name: "Git", icon: SiGit, color: "text-[#F05032]" },
-  { name: "GitHub", icon: SiGithub, color: "text-white" },
+  { name: "GitHub", icon: SiGithub, color: "text-[#252720]" },
   { name: "Figma", icon: SiFigma, color: "text-[#F24E1E]" },
-  { name: "Vercel", icon: SiVercel, color: "text-white" },
+  { name: "Vercel", icon: SiVercel, color: "text-[#252720]" },
 ];
 
 const container = {
@@ -75,13 +75,9 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-black text-white"
+      className="border-y border-[#ded8cc] bg-[#efebe3] text-[#252720]"
     >
-      {/* Background */}
-      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[150px]" />
-
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
-      <div className="relative mx-auto max-w-7xl md:px-0 px-5 mt-24">
+      <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
         {/* Heading */}
         <motion.div
           variants={container}
@@ -95,7 +91,7 @@ export default function Skills() {
         >
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur"
+            className="inline-flex items-center gap-2 border-b border-[#a95132] pb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#a95132]"
           >
             <BsCircleFill size={7} />
             The Technology Behind Every Project
@@ -103,14 +99,14 @@ export default function Skills() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-4 text-2xl font-bold md:text-4xl"
+            className="mt-6 text-3xl font-medium tracking-[-0.04em] md:text-5xl"
           >
-            Technologies I <span className="text-orange-500">Work With</span>
+            Technologies I <span className="text-[#a95132]">Work With</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-3 max-w-2xl text-zinc-400"
+            className="mx-auto mt-4 max-w-2xl text-[#716f66]"
           >
             Technologies I use to build fast, modern, responsive and accessible
             websites and web applications.
@@ -135,7 +131,7 @@ export default function Skills() {
               <motion.div
                 key={skill.name}
                 variants={card}
-                className="group rounded-2xl border border-zinc-800 bg-zinc-900 p-6 hover:border-orange-500 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)]"
+                className="group border border-[#d9d2c6] bg-[#f5f2eb] p-6 transition-colors hover:border-[#a95132]"
               >
                 <div className="flex flex-col items-center">
                   <motion.div transition={{ duration: 0.25 }}>
@@ -147,12 +143,12 @@ export default function Skills() {
                     />
                   </motion.div>
 
-                  <h3 className="mt-4 text-center text-sm font-medium text-zinc-300">
+                  <h3 className="mt-4 text-center text-sm font-medium text-[#55564f]">
                     {skill.name}
                   </h3>
                 </div>
 
-                <div className="mt-5 h-1 w-0 rounded-full bg-orange-500 transition-all duration-500 group-hover:w-full" />
+                <div className="mt-5 h-px w-0 bg-[#a95132] transition-all duration-500 group-hover:w-full" />
               </motion.div>
             );
           })}

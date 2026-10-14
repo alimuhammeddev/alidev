@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, FolderGit2, ExternalLink, ArrowUpRight } from "lucide-react";
+import { FolderGit2, ArrowUpRight } from "lucide-react";
 
 import nilebrew from "./assets/nilebrew.png";
 import tomato from "./assets/tomato.png";
@@ -14,8 +14,8 @@ import techhub from "./assets/techhub.png";
 import travelworld from "./assets/travelworld.png";
 import Link from "next/link";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
@@ -153,32 +153,13 @@ const card = {
   },
 };
 
-const image = {
-  hidden: {
-    opacity: 0,
-    scale: 1.1,
-  },
-  show: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.9,
-    },
-  },
-};
-
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-black text-white"
+      className="bg-[#f5f2eb] text-[#252720]"
     >
-      {/* Background */}
-      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[150px]" />
-
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
-
-      <div className="relative mx-auto max-w-7xl md:px-0 px-5 mt-20">
+      <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
         {/* Heading */}
         <motion.div
           variants={container}
@@ -188,11 +169,11 @@ export default function Projects() {
             once: true,
             amount: 0.3,
           }}
-          className="mb-10 text-center"
+          className="mb-12 text-center"
         >
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur"
+            className="inline-flex items-center gap-2 border-b border-[#a95132] pb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#a95132]"
           >
             <FolderGit2 size={16} />
             Featured Projects
@@ -200,14 +181,14 @@ export default function Projects() {
 
           <motion.h2
             variants={fadeUp}
-            className="mt-4 text-2xl font-bold md:text-4xl"
+            className="mt-6 text-3xl font-medium tracking-[-0.04em] md:text-5xl"
           >
-            Project <span className="text-orange-500">Work</span>
+            Selected <span className="text-[#a95132]">work</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-3 max-w-2xl text-zinc-400"
+            className="mx-auto mt-4 max-w-2xl text-[#716f66]"
           >
             A collection of projects built with React, Next.js, Tailwind CSS,
             and TypeScript focusing on beautiful UI, scalability and
@@ -227,79 +208,17 @@ export default function Projects() {
         >
           {projects.slice(0, 3).map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title}
               variants={card}
-              className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 hover:border-orange-500"
             >
-              {/* Image */}
-              <div className="relative overflow-hidden">
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-110"
-                  />
-                </div>
-
-                <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
-
-                <span className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 font-semibold text-black">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="space-y-5 p-6">
-                <div>
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
-
-                  <p className="mt-3 text-sm leading-7 text-zinc-400">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-zinc-800 px-3 py-1 text-xs text-orange-400"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between border-t border-zinc-800 pt-5">
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 text-sm text-zinc-300 transition hover:text-orange-400"
-                  >
-                    <Code2 size={18} />
-                    Code
-                  </a>
-
-                  <a
-                    href={project.live}
-                    className="group/link flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-black transition hover:bg-orange-600"
-                  >
-                    Live Demo
-                    <ExternalLink
-                      size={16}
-                      className="transition-transform group-hover/link:translate-x-1"
-                    />
-                  </a>
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-orange-500 transition-all duration-500 group-hover:w-full" />
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </motion.div>
         <div className="mt-10 flex justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-8 py-3 font-medium text-zinc-900 transition-all duration-300 hover:bg-orange-600"
+            className="inline-flex items-center gap-2 border border-[#a95132] px-6 py-3 text-sm font-medium text-[#a95132] transition-colors hover:bg-[#a95132] hover:text-[#fffaf2]"
           >
             See All Projects
             <ArrowUpRight size={16} />

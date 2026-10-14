@@ -1,173 +1,145 @@
 "use client";
 
 import {
-  Sparkles,
-  Code2,
-  Zap,
-  MonitorSmartphone,
+  ArrowDown,
   ArrowUpRight,
+  Code2,
   File,
+  MonitorSmartphone,
+  Zap,
 } from "lucide-react";
-import { bungeeOutline } from "@/app/font";
-import { BsCircleFill } from "react-icons/bs";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-black text-white">
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-0 h-87.5 w-87.5 -translate-x-1/2 rounded-full bg-orange-500/20 blur-[200px] lg:h-162.5 lg:w-162.5 lg:blur-[500px]" />
+    <section
+      id="home"
+      className="relative overflow-hidden border-b border-[#ded8cc] bg-[#f5f2eb] text-[#252720]"
+    >
+      <div className="mx-auto grid min-h-[760px] max-w-7xl items-center gap-16 px-5 pb-20 pt-32 md:pt-36 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+        <div className="max-w-2xl">
+          <p className="mb-8 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[#a95132]">
+            <span className="h-px w-8 bg-[#a95132]" />
+            Independent web developer · Abuja, Nigeria
+          </p>
 
-      <div className="absolute bottom-0 left-0 h-56 w-56 rounded-full bg-orange-500/10 blur-[200px] lg:h-72 lg:w-72 lg:blur-[500px]" />
+          <h1 className="text-5xl font-medium leading-[1.04] tracking-[-0.065em] sm:text-6xl lg:text-[clamp(4rem,6.4vw,6.4rem)]">
+            Thoughtful
+            <br />
+            websites,
+            <br />
+            <span className="font-normal italic text-[#a95132]">
+              built to work.
+            </span>
+          </h1>
 
-      <div className="absolute right-0 top-40 h-64 w-64 rounded-full bg-orange-600/10 blur-[200px] lg:h-96 lg:w-96 lg:blur-[500px]" />
+          <p className="mt-8 max-w-xl text-base leading-8 text-[#716f66] sm:text-lg">
+            I&apos;m Ali Muhammed, a frontend developer partnering with ambitious
+            businesses to turn good ideas into fast, memorable digital
+            experiences.
+          </p>
 
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
+          <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
+            <a
+              href="https://wa.me/23407086587956"
+              className="group inline-flex items-center justify-center gap-3 bg-[#a95132] px-7 py-4 text-sm font-medium text-[#fffaf2] transition-colors hover:bg-[#87412b]"
+            >
+              Start a project
+              <ArrowUpRight
+                size={17}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </a>
+            <a
+              href="/Ali Resume.pdf"
+              className="inline-flex items-center justify-center gap-2 px-3 py-3 text-sm font-medium text-[#252720] transition-colors hover:text-[#a95132]"
+            >
+              <File size={16} />
+              View résumé
+            </a>
+          </div>
 
-      <div className="relative mx-auto flex min-h-svh max-w-7xl items-center px-5 md:pt-48 pt-36 lg:min-h-screen md:px-0 mb-5">
-        <div className="grid w-full gap-16 lg:grid-cols-2">
-          {/* LEFT */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-md">
-                <BsCircleFill size={7} aria-hidden="true" />
-                Available for Freelance Projects
-              </div>
-            </div>
-
-            <p className="mt-8 text-sm uppercase tracking-[5px] text-orange-400 sm:text-base">
-              Hi, I'm <span className="text-white">Ali Muhammed</span> —
-              Building Websites That Grow Businesses
-            </p>
-
-            <h2 className="mt-4 text-2xl font-bold leading-tight md:text-3xl lg:text-5xl">
-              I Build{" "}
-              <span className="text-orange-500">Fast, Modern Websites</span>{" "}
-              That Help Businesses{" "}
-              <span className="text-orange-500">Get More Customers.</span>
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-zinc-400 lg:mx-0 lg:text-lg lg:leading-8">
-              I've helped businesses and brands launch modern websites that are
-              visually appealing, mobile friendly, and optimized for
-              performance. From concept to deployment, I build digital
-              experiences that attract customers, strengthen credibility, and
-              help businesses grow online.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
-              <a
-                href="https://wa.me/23407086587956"
-                className="group flex items-center justify-center gap-2 rounded-full bg-orange-500 text-zinc-900 px-8 py-4 font-semibold transition hover:bg-orange-600"
-              >
-                Hire Me
-                <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-
-              <a
-                href="/Ali Resume.pdf"
-                className="group flex items-center justify-center gap-2 rounded-full border border-orange-500 px-8 py-4 font-semibold text-orange-400 transition hover:bg-orange-500 hover:text-white"
-              >
-                View Resume
-                <File className="transition-transform duration-300 group-hover:-translate-y-1" />
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-5 text-center lg:flex lg:gap-12 lg:text-center">
-              <div>
-                <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
-                  10+
-                </h3>
-                <p className="mt-2 text-sm text-zinc-400">Projects</p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
-                  4+
-                </h3>
-                <p className="mt-2 text-sm text-zinc-400">
-                  Years of Experience
+          <div className="mt-16 grid max-w-lg grid-cols-3 border-t border-[#d9d2c6] pt-6">
+            {[
+              ["10+", "Projects delivered"],
+              ["4+", "Years building"],
+              ["100%", "Responsive"],
+            ].map(([value, label]) => (
+              <div key={label} className="pr-3">
+                <p className="text-2xl font-medium tracking-tight text-[#252720] sm:text-3xl">
+                  {value}
+                </p>
+                <p className="mt-2 text-xs leading-5 text-[#716f66] sm:text-sm">
+                  {label}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
 
+        <div className="relative mx-auto w-full max-w-[510px] lg:ml-auto">
+          <div className="border border-[#353a33] bg-[#252a25] p-6 text-[#e6e2d8] sm:p-9">
+            <div className="mb-10 flex items-center justify-between border-b border-white/10 pb-5">
               <div>
-                <h3 className="text-3xl font-bold text-orange-500 lg:text-4xl">
-                  100%
-                </h3>
-                <p className="mt-2 text-sm text-zinc-400">Mobile Optimized</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#aeb0a4]">
+                  A good website does more
+                </p>
+                <p className="mt-2 text-sm text-white">Than look the part.</p>
+              </div>
+              <Code2 size={20} className="text-[#d58b69]" aria-hidden="true" />
+            </div>
+
+            <div className="space-y-6 font-mono text-xs leading-6 sm:text-sm">
+              <p>
+                <span className="text-[#d58b69]">const</span>{" "}
+                <span className="text-white">yourNextWebsite</span> = {"{"}
+              </p>
+              <div className="space-y-3 pl-5 text-[#c6c6ba]">
+                <p>
+                  purpose: <span className="text-[#d8b695]">&quot;clear&quot;</span>,
+                </p>
+                <p>
+                  performance:{" "}
+                  <span className="text-[#d8b695]">&quot;lightning fast&quot;</span>,
+                </p>
+                <p>
+                  design:{" "}
+                  <span className="text-[#d8b695]">&quot;made for people&quot;</span>,
+                </p>
+                <p>
+                  mobile: <span className="text-[#d8b695]">true</span>,
+                </p>
+                <p>
+                  readyToGrow: <span className="text-[#d8b695]">true</span>,
+                </p>
+              </div>
+              <p>{"}"}</p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 border-t border-white/10 pt-6">
+              <div className="flex items-center gap-3 pr-4">
+                <Zap size={17} className="shrink-0 text-[#d58b69]" />
+                <span className="text-xs leading-5 text-[#d3d0c6]">
+                  Built for speed
+                </span>
+              </div>
+              <div className="flex items-center gap-3 border-l border-white/10 pl-4">
+                <MonitorSmartphone
+                  size={17}
+                  className="shrink-0 text-[#d58b69]"
+                />
+                <span className="text-xs leading-5 text-[#d3d0c6]">
+                  Designed for every screen
+                </span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT */}
-          <div className="relative flex justify-center mb-10">
-            {/* Code Card */}
-            <div className="relative w-full max-w-sm rounded-3xl border border-orange-500/20 bg-zinc-900/80 p-6 shadow-2xl backdrop-blur-xl sm:max-w-md lg:p-8">
-              <div className="mb-6 flex items-center justify-between">
-                <div className="flex gap-2">
-                  <span className="h-3 w-3 rounded-full bg-red-500" />
-                  <span className="h-3 w-3 rounded-full bg-yellow-500" />
-                  <span className="h-3 w-3 rounded-full bg-green-500" />
-                </div>
-
-                <Code2 className="text-orange-500" />
-              </div>
-
-              <pre className="overflow-x-auto text-xs leading-7 text-zinc-300 sm:text-sm">
-                {`const yourProject = {
-  goal: "Grow your business online",
-
-  services: [
-    "Business Websites",
-    "Landing Pages",
-    "Web Applications",
-    "UI Development",
-    "Website Redesign"
-  ],
-
-  results: [
-    "Fast loading performance",
-    "Mobile responsive design",
-    "SEO-friendly structure",
-    "Modern user experience",
-    "Clean, scalable code"
-  ],
-
-  status: "Ready to build yours"
-}`}
-              </pre>
-            </div>
-
-            {/* Floating Cards */}
-            <div className="absolute -left-8 -top-9 hidden items-center gap-3 rounded-2xl border border-orange-500/20 bg-zinc-900 px-5 py-3 shadow-xl backdrop-blur-xl lg:flex">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10">
-                <Zap size={20} className="text-orange-500" />
-              </div>
-
-              <div>
-                <h4 className="text-sm font-semibold text-white">
-                  Fast Performance
-                </h4>
-                <p className="text-xs text-zinc-400">
-                  Optimized & Lightning Fast
-                </p>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-6 right-0 hidden items-center gap-3 rounded-2xl border border-orange-500/20 bg-zinc-900 px-5 py-3 shadow-xl backdrop-blur-xl lg:flex">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10">
-                <MonitorSmartphone size={20} className="text-orange-500" />
-              </div>
-
-              <div>
-                <h4 className="text-sm font-semibold text-white">Modern UI</h4>
-                <p className="text-xs text-zinc-400">Responsive Design</p>
-              </div>
-            </div>
-          </div>
+          <a
+            href="#about"
+            className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#716f66] transition-colors hover:text-[#a95132]"
+          >
+            Explore the portfolio <ArrowDown size={14} />
+          </a>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { geistMono } from "@/app/font";
+import { geist } from "@/app/font";
 
 export const metadata: Metadata = {
   title: "Ali Muhammed S.",
@@ -14,9 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={geistMono.className}>
-        {children}
-      </body>
+      <body className={geist.className}>{children}</body>
     </html>
   );
 };

@@ -1,10 +1,5 @@
-import { Geist_Mono, Bungee_Outline } from "next/font/google";
+import { Geist } from "next/font/google";
 
-export const geistMono = Geist_Mono({
+export const geist = Geist({
   subsets: ["latin"],
-});
-
-export const bungeeOutline = Bungee_Outline({
-  subsets: ["latin"],
-  weight: "400",
 });

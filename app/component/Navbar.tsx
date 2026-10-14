@@ -1,144 +1,81 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Menu, X, ArrowRight, Star } from "lucide-react";
-import { bungeeOutline } from "@/app/font";
+import { useState } from "react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Brand from "./Brand";
+
+const links = ["Home", "About", "Projects", "Skills", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const links = ["Home", "About", "Projects", "Skills", "Contact"];
+  const renderLink = (label: string, mobile = false) =>
+    label === "Projects" ? (
+      <Link
+        key={label}
+        href="/projects"
+        onClick={() => setOpen(false)}
+        className={`transition-colors hover:text-[#a95132] ${mobile ? "text-lg" : "text-sm"}`}
+      >
+        {label}
+      </Link>
+    ) : (
+      <a
+        key={label}
+        href={`#${label.toLowerCase()}`}
+        onClick={() => setOpen(false)}
+        className={`transition-colors hover:text-[#a95132] ${mobile ? "text-lg" : "text-sm"}`}
+      >
+        {label}
+      </a>
+    );
 
   return (
-    <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-in-out ${
-        scrolled ? "top-0" : "top-5"
-      }`}
-    >
-      {/* Navbar Background */}
-      <div
-        className={`border border-orange-500/20 bg-black backdrop-blur-xl transition-all duration-700 ease-in-out ${
-          scrolled ? "rounded-none" : "mx-4 rounded-full"
-        }`}
-      >
-        {/* Navbar Content */}
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between md:px-0 px-5">
-          {/* Logo */}
-          <a href="/" className="group flex items-center gap-2">
-            <h1 className={`${bungeeOutline.className} text-4xl text-white`}>
-              <span className="text-orange-500">ALi</span>_Dev
-            </h1>
-          </a>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#ded8cc] bg-[#f5f2eb]">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 lg:px-8">
+        <Brand />
 
-          {/* Desktop Nav */}
-          <nav className="hidden items-center gap-12 lg:flex">
-            {links.map((link) =>
-              link === "Projects" ? (
-                <Link
-                  key={link}
-                  href="/projects"
-                  className="group relative text-[15px] font-medium text-zinc-300 transition-colors duration-300 hover:text-orange-400"
-                >
-                  {link}
-                  <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
-                </Link>
-              ) : (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className="group relative text-[15px] font-medium text-zinc-300 transition-colors duration-300 hover:text-orange-400"
-                >
-                  {link}
-                  <span className="absolute -bottom-2 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
-                </a>
-              ),
-            )}
-          </nav>
+        <nav aria-label="Main navigation" className="hidden items-center gap-9 lg:flex">
+          {links.map((link) => renderLink(link))}
+        </nav>
 
-          {/* CTA */}
-          <a
-            href="https://wa.me/23407086587956"
-            className="group relative hidden items-center justify-center overflow-hidden rounded-full border border-orange-500 px-7 py-3 lg:flex"
-          >
-            <span className="absolute inset-0 origin-left scale-x-0 rounded-full bg-orange-500 transition-transform duration-500 ease-out group-hover:scale-x-100" />
+        <a
+          href="https://wa.me/23407086587956"
+          className="group hidden items-center gap-2 border-b border-[#a95132] pb-1 text-sm font-medium text-[#a95132] transition-colors hover:text-[#252720] lg:flex"
+        >
+          Let&apos;s talk
+          <ArrowRight
+            size={16}
+            className="transition-transform group-hover:translate-x-1"
+          />
+        </a>
 
-            <span className="relative z-10 flex items-center gap-2 font-medium text-orange-400 transition-colors duration-500 group-hover:text-white">
-              Let's Talk
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </span>
-          </a>
-
-          {/* Mobile Button */}
-          <button
-            onClick={() => setOpen(!open)}
-            aria-label="mobile menu"
-            className="rounded-full p-2 text-orange-500 transition hover:bg-orange-500/10 lg:hidden"
-          >
-            {open ? <X size={28} /> : <Menu size={28} aria-hidden="true" />}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="p-2 text-[#252720] lg:hidden"
+        >
+          {open ? <X size={23} /> : <Menu size={23} />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
-        className={`overflow-hidden transition-all duration-500 lg:hidden ${
-          open ? "max-h-125 opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden border-t border-[#ded8cc] bg-[#f5f2eb] transition-[max-height,opacity] duration-300 lg:hidden ${
+          open ? "max-h-96 opacity-100" : "max-h-0 border-t-transparent opacity-0"
         }`}
       >
-        <div
-          className={`border border-orange-500/20 bg-zinc-900/95 p-6 shadow-2xl backdrop-blur-xl transition-all duration-700 ${
-            scrolled ? "rounded-none" : "mx-4 mt-4 rounded-3xl"
-          }`}
-        >
-          <div className="mx-auto max-w-7xl">
-            <nav className="flex flex-col gap-5">
-              {links.map((link) =>
-                link === "Projects" ? (
-                  <Link
-                    key={link}
-                    href="/projects"
-                    onClick={() => setOpen(false)}
-                    className="text-base font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
-                  >
-                    {link}
-                  </Link>
-                ) : (
-                  <a
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-zinc-300 transition-all duration-300 hover:translate-x-2 hover:text-orange-400"
-                  >
-                    {link}
-                  </a>
-                ),
-              )}
-
-              <a
-                href="https://wa.me/23407086587956"
-                className="mt-4 flex items-center justify-center gap-2 rounded-full bg-orange-500 py-3 font-medium text-white transition-all duration-300 hover:bg-orange-600"
-              >
-                Let's Talk
-                <ArrowRight size={18} />
-              </a>
-            </nav>
-          </div>
-        </div>
+        <nav aria-label="Mobile navigation" className="mx-auto grid max-w-7xl gap-5 px-6 py-6">
+          {links.map((link) => renderLink(link, true))}
+          <a
+            href="https://wa.me/23407086587956"
+            className="mt-1 inline-flex items-center gap-2 text-lg font-medium text-[#a95132]"
+          >
+            Let&apos;s talk <ArrowRight size={18} />
+          </a>
+        </nav>
       </div>
     </header>
   );

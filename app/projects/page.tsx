@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { Code2, ExternalLink, FolderGit2, ArrowLeft } from "lucide-react";
+import { FolderGit2, ArrowLeft } from "lucide-react";
 
 import nilebrew from "../component/assets/nilebrew.png";
 import tomato from "../component/assets/tomato.png";
@@ -16,6 +15,7 @@ import techhub from "../component/assets/techhub.png";
 import travelworld from "../component/assets/travelworld.png";
 
 import { motion } from "framer-motion";
+import ProjectCard from "../component/ProjectCard";
 
 const projects = [
   {
@@ -125,57 +125,20 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-const imageVariants = {
-  hidden: {
-    scale: 1.15,
-    opacity: 0,
-  },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    },
-  },
-};
-
 export default function ProjectsPage() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black text-white">
-      {/* Top Glow */}
-      <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-500/10 blur-[150px]" />
-
-      {/* Bottom Glow */}
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-500/5 blur-[180px]" />
-
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
+    <section className="min-h-screen bg-[#f5f2eb] text-[#252720]">
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative mx-auto max-w-7xl px-5 py-20"
+        className="relative mx-auto max-w-7xl px-5 py-12 pt-24 lg:px-8 lg:py-16 lg:pt-28"
       >
         {/* Header */}
         <Link
           href="/"
-          className="mb-10 inline-flex items-center gap-2 text-orange-400 transition hover:text-orange-300"
+          className="mb-12 inline-flex items-center gap-2 text-sm text-[#a95132] transition-colors hover:text-[#252720]"
         >
           <ArrowLeft size={18} />
           Back to Home
@@ -185,18 +148,18 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="mb-10 text-center"
+          className="mb-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm text-orange-400">
+          <div className="inline-flex items-center gap-2 border-b border-[#a95132] pb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#a95132]">
             <FolderGit2 size={16} />
             Projects
           </div>
 
-          <h1 className="mt-4 text-2xl font-bold md:text-4xl">
-            All <span className="text-orange-500">Projects</span>
+          <h1 className="mt-6 text-3xl font-medium tracking-[-0.04em] md:text-5xl">
+            All <span className="text-[#a95132]">Projects</span>
           </h1>
 
-          <p className="mx-auto mt-3 max-w-2xl text-zinc-400">
+          <p className="mx-auto mt-4 max-w-2xl text-[#716f66]">
             Explore my collection of web applications built with React, Next.js,
             Tailwind CSS, TypeScript, and modern frontend technologies.
           </p>
@@ -212,70 +175,13 @@ export default function ProjectsPage() {
         >
           {projects.map((project, index) => (
             <motion.div
+              key={project.title}
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.2 }}
-              key={index}
-              className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 transition-all duration-500 hover:translate-y-0 hover:border-orange-500"
             >
-              <div className="relative h-56 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
-                />
-
-                <span className="absolute left-5 top-5 rounded-full bg-orange-500 px-4 py-2 font-bold text-gray-900">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-
-              <div className="space-y-5 p-6">
-                <div>
-                  <h2 className="md:text-2xl text-xl font-bold">{project.title}</h2>
-
-                  <p className="mt-3 text-sm leading-7 text-zinc-400">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-zinc-800 px-3 py-1 text-xs text-orange-400"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between border-t border-zinc-800 pt-5">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-zinc-300 transition hover:text-orange-400"
-                  >
-                    <Code2 size={18} />
-                    Code
-                  </a>
-
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-medium text-gray-900 transition hover:bg-orange-600"
-                  >
-                    Live Demo
-                    <ExternalLink size={16} />
-                  </a>
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-orange-500 transition-all duration-500 group-hover:w-full" />
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </motion.div>

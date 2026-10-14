@@ -1,29 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1f2937; /* Milk color */
-  --foreground: #1f2937;
+  color-scheme: light;
+  --background: #f5f2eb;
+  --foreground: #252720;
+  --accent: #a95132;
+  --muted: #716f66;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: "Fira Sans", sans-serif;
+* {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: #171717;
-  color: #171717;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #a95132;
+  color: #fffaf2;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
 }
 
 @keyframes floatIn {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-12px);
   }
   to {
     opacity: 1;
@@ -32,50 +55,38 @@ body {
 }
 
 header {
-  animation: floatIn .7s ease;
+  animation: floatIn 0.7s ease;
 }
 
-/* ===========================
-   PROJECT SWIPER
-=========================== */
-
-/* Navigation Buttons */
 .projectSwiper .swiper-button-next,
 .projectSwiper .swiper-button-prev {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d7cfc1;
   border-radius: 9999px;
-
-  background: rgba(249, 115, 22, 0.12);
-  border: 1px solid rgba(249, 115, 22, 0.35);
-
-  color: #f97316;
-
-  backdrop-filter: blur(10px);
-
-  transition: all .35s ease;
+  background: #f5f2eb;
+  color: var(--accent);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
-/* Arrow Size */
 .projectSwiper .swiper-button-next::after,
 .projectSwiper .swiper-button-prev::after {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 
-/* Hover */
 .projectSwiper .swiper-button-next:hover,
 .projectSwiper .swiper-button-prev:hover {
-  background: #f97316;
-  color: white;
-
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(249,115,22,.4);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fffaf2;
 }
 
-/* Disabled */
 .projectSwiper .swiper-button-disabled {
-  opacity: .35;
+  opacity: 0.35;
 }
 
 .projectSwiper {
@@ -84,4 +95,15 @@ header {
 
 .projectSwiper:active {
   cursor: grabbing;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -38,17 +38,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-black text-white"
+      className="bg-[#f5f2eb] text-[#252720]"
     >
-      {/* Background Glow */}
-      <div className="absolute left-0 top-32 h-80 w-80 rounded-full bg-orange-500/10 blur-[140px]" />
-
-      <div className="absolute right-0 bottom-20 h-96 w-96 rounded-full bg-orange-600/10 blur-[180px]" />
-
-      {/* Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[45px_45px]" />
-
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-0 mt-28">
+      <div className="mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
         <motion.div
           variants={container}
           initial="hidden"
@@ -60,7 +52,7 @@ export default function About() {
           <motion.div variants={fadeUp}>
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm text-orange-400 backdrop-blur-xl"
+              className="inline-flex items-center gap-2 border-b border-[#a95132] pb-2 text-xs font-medium uppercase tracking-[0.16em] text-[#a95132]"
             >
               <User size={16} />
               Why Work With Me
@@ -68,20 +60,20 @@ export default function About() {
 
             <motion.h2
               variants={fadeUp}
-              className="mt-5 text-2xl font-bold leading-tight md:text-4xl"
+              className="mt-6 text-3xl font-medium leading-tight tracking-[-0.04em] md:text-5xl"
             >
               Helping Businesses Stand Out With
-              <span className="text-orange-500"> Modern Websites </span>
+              <span className="text-[#a95132]"> Modern Websites </span>
               That Deliver Results.
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              className="mt-5 md:text-lg text-base leading-8 text-zinc-400"
+              className="mt-6 text-base leading-8 text-[#716f66] md:text-lg"
             >
-              I'm Ali Muhammed, a website developer who helps businesses
+              I&apos;m Ali Muhammed, a website developer who helps businesses
               transform their ideas into modern, high performing websites and
-              web applications. Whether you're launching a new business,
+              web applications. Whether you&apos;re launching a new business,
               refreshing your online presence, or building a custom platform, I
               create digital solutions that build trust, engage customers,
               support business growth and help you connect with more customers.
@@ -89,7 +81,7 @@ export default function About() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-3 md:text-lg text-base leading-8 text-zinc-400"
+              className="mt-4 text-base leading-8 text-[#716f66] md:text-lg"
             >
               Every project I build is designed with performance,
               responsiveness, accessibility, and user experience in mind. I
@@ -110,16 +102,16 @@ export default function About() {
                   key={item}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle2 size={22} className="text-orange-500" />
+                  <CheckCircle2 size={20} className="text-[#a95132]" />
 
-                  <span className="text-zinc-400">{item}</span>
+                  <span className="text-[#55564f]">{item}</span>
                 </motion.div>
               ))}
             </div>
 
             <a
               href="/projects"
-              className="group mt-7 inline-flex text-black items-center gap-2 rounded-full bg-orange-500 px-8 py-4 font-semibold transition hover:bg-orange-600"
+              className="group mt-8 inline-flex items-center gap-3 border-b border-[#a95132] pb-2 font-medium text-[#a95132] transition-colors hover:text-[#252720]"
             >
               See My Work
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -128,22 +120,20 @@ export default function About() {
 
           {/* RIGHT */}
           <motion.div variants={fadeUp} className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-orange-500/10" />
-
-            <div className="relative rounded-3xl border border-orange-500/20 bg-zinc-900 p-4 backdrop-blur-xl">
+            <div className="border border-[#ded8cc] bg-[#efebe3] p-4 sm:p-6">
               <div className="grid gap-6">
                 <motion.div
                   variants={fadeUp}
-                  className="flex items-center gap-5 rounded-2xl bg-black/40 p-6"
+                  className="flex items-center gap-5 border-b border-[#ded8cc] p-5"
                 >
-                  <div className="rounded-xl bg-orange-500/10 p-4">
-                    <Code2 className="text-orange-500" />
+                  <div className="border border-[#ded8cc] bg-[#f5f2eb] p-3">
+                    <Code2 className="text-[#a95132]" />
                   </div>
 
                   <div>
                     <h3 className="font-semibold">Clean Code</h3>
 
-                    <p className="mt-1 text-sm text-zinc-400">
+                    <p className="mt-1 text-sm text-[#716f66]">
                       Scalable and maintainable code structure.
                     </p>
                   </div>
@@ -151,16 +141,16 @@ export default function About() {
 
                 <motion.div
                   variants={fadeUp}
-                  className="flex items-center gap-5 rounded-2xl bg-black/40 p-6"
+                  className="flex items-center gap-5 border-b border-[#ded8cc] p-5"
                 >
-                  <div className="rounded-xl bg-orange-500/10 p-4">
-                    <Briefcase className="text-orange-500" />
+                  <div className="border border-[#ded8cc] bg-[#f5f2eb] p-3">
+                    <Briefcase className="text-[#a95132]" />
                   </div>
 
                   <div>
                     <h3 className="font-semibold">Real Projects</h3>
 
-                    <p className="mt-1 text-sm text-zinc-400">
+                    <p className="mt-1 text-sm text-[#716f66]">
                       Experience building production ready websites and web
                       apps.
                     </p>
@@ -169,16 +159,16 @@ export default function About() {
 
                 <motion.div
                   variants={fadeUp}
-                  className="flex items-center gap-5 rounded-2xl bg-black/40 p-6"
+                  className="flex items-center gap-5 p-5"
                 >
-                  <div className="rounded-xl bg-orange-500/10 p-4">
-                    <Award className="text-orange-500" />
+                  <div className="border border-[#ded8cc] bg-[#f5f2eb] p-3">
+                    <Award className="text-[#a95132]" />
                   </div>
 
                   <div>
                     <h3 className="font-semibold">Continuous Learning</h3>
 
-                    <p className="mt-1 text-sm text-zinc-400">
+                    <p className="mt-1 text-sm text-[#716f66]">
                       Always exploring new technologies and best practices.
                     </p>
                   </div>
@@ -189,24 +179,24 @@ export default function About() {
                 variants={fadeUp}
                 className="mt-8 grid grid-cols-3 gap-5"
               >
-                <div className="text-center">
-                  <h3 className="text-3xl font-bold text-orange-500">10+</h3>
+                <div className="border-t border-[#ded8cc] pt-5 text-center">
+                  <h3 className="md:text-3xl text-2xl font-medium text-[#a95132]">10+</h3>
 
-                  <p className="mt-2 text-sm text-zinc-400">Projects</p>
+                  <p className="mt-2 text-sm text-[#716f66]">Projects</p>
                 </div>
 
-                <div className="text-center">
-                  <h3 className="text-3xl font-bold text-orange-500">4+</h3>
+                <div className="border-t border-[#ded8cc] pt-5 text-center">
+                  <h3 className="md:text-3xl text-2xl font-medium text-[#a95132]">4+</h3>
 
-                  <p className="mt-2 text-sm text-zinc-400">
+                  <p className="mt-2 text-sm text-[#716f66]">
                     Years of Experience
                   </p>
                 </div>
 
-                <div className="text-center">
-                  <h3 className="text-3xl font-bold text-orange-500">100%</h3>
+                <div className="border-t border-[#ded8cc] pt-5 text-center">
+                  <h3 className="md:text-3xl text-2xl font-medium text-[#a95132]">100%</h3>
 
-                  <p className="mt-2 text-sm text-zinc-400">
+                  <p className="mt-2 text-sm text-[#716f66]">
                     Mobile Optimized
                   </p>
                 </div>

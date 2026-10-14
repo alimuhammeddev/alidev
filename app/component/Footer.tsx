@@ -1,22 +1,17 @@
-"use client";
-
-import { bungeeOutline } from "@/app/font";
+import Brand from "./Brand";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 bg-black py-8 text-white">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:px-0 px-5 md:flex-row">
-        {/* Logo */}
-        <h1 className={`${bungeeOutline.className} text-4xl text-white`}>
-          <span className="text-orange-500">ALi</span>_Dev
-        </h1>
+    <footer className="bg-[#252a25] py-8 text-[#e6e2d8]">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 md:flex-row lg:px-8">
+        <Brand inverted />
 
-        <p className="text-sm text-zinc-400">
+        <p className="text-sm text-[#b9b8ac]">
           © {new Date().getFullYear()} All rights reserved.
         </p>
 
-        <p className="text-sm text-zinc-400">
-          <span className="text-orange-500">&lt;/&gt;</span> Building with
+        <p className="text-sm text-[#b9b8ac]">
+          <span className="text-[#d58b69]">&lt;/&gt;</span> Building with
           creativity and code
         </p>
       </div>
